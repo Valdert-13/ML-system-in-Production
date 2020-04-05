@@ -11,6 +11,9 @@ def build_dataset_raw(churned_start_date: str='2019-01-01',
                       raw_data_path: str ='train/',
                       dataset_path: str ='dataset/',
                       mode: str ='train'):
+
+    '''Building a dataset from data unloaded from SQL'''
+
     start_t = time.time()
 
     sample = pd.read_csv('{}sample.csv'.format(raw_data_path), sep=';', na_values=['\\N', 'None'], encoding='utf-8')

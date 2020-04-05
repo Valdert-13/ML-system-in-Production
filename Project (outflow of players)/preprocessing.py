@@ -5,6 +5,9 @@ from imblearn.over_sampling import SMOTE
 from sklearn.model_selection import train_test_split
 
 def prepare_dataset(dataset, mode, dataset_path, INTER_LIST):
+
+    '''Filling empty and invalid values'''
+
     start_t = time.time()
     print('Dealing with missing values, outliers, categorical features...')
 
@@ -29,6 +32,9 @@ def prepare_dataset(dataset, mode, dataset_path, INTER_LIST):
     return dataset
 
 def scale_balance (dataset):
+
+    '''Dataset balancing and separation into train and test'''
+
     X_train = dataset.drop(['user_id', 'is_churned'], axis=1)
     y_train = dataset['is_churned']
 
@@ -49,6 +55,9 @@ def scale_balance (dataset):
 
 
 def scale_test (dataset):
+
+    '''Balancing test dataset'''
+
     test = dataset.drop(['user_id'], axis=1)
     scaler = MinMaxScaler()
     test = scaler.fit_transform(test)
