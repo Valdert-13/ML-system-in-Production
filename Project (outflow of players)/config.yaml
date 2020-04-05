@@ -1,0 +1,35 @@
+# General settings:
+# -----------------
+
+TRAIN_DATA_FILEPATH : 'G:/data/ML-system-in-Production/dataset/dataset_raw_train.csv'
+TEST_DATA_FILEPATH : 'G:/data/ML-system-in-Production/dataset/dataset_raw_test.csv'
+SEP : ';'
+RAW_TRAIN_PATH : 'G:/data/ML-system-in-Production/train/'
+RAW_TEST_PATH : 'G:/data/ML-system-in-Production/test/'
+DATASET_PATH : 'G:/data/ML-system-in-Production/dataset/'  # folder for built dataset
+OUTPUT_DATA_PATH : 'predicted_data.csv'
+
+  # Building raw data set settings:
+  # ------------------------------
+
+# Set True to prepare data sets from scratch
+REBUILD_TRAIN : True
+REBUILD_TEST : True
+
+# Choose a period of evaluation depending on input data range
+CHURNED_START_DATE : '2019-09-01'
+CHURNED_END_DATE : '2019-10-01'
+
+# Set evaluation intervals in days
+INTER_1 : [1, 7]
+INTER_2 : [8, 14]
+INTER_3 : [15, 21]
+INTER_4 : [22, 28]
+
+# Model Settings
+# ---------------
+
+MODEL_NAME : 'model.sav'
+# Use model from file
+LOAD_MODEL : False
+# Save changes in model
